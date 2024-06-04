@@ -20,6 +20,10 @@ let idUpdate = null;
 
 btnAdd.addEventListener('click', () => {
     modal.classList.remove('hidden');
+    let error = document.querySelectorAll('.error-name');
+    for (let i in error) {
+        error[i].innerHTML = "";
+    }
 });
 
 btnClose.addEventListener('click', () => {
@@ -68,7 +72,6 @@ formModal.addEventListener('submit', (e) => {
         renderProfiles();
         return;
     }
-
 
     let id = 1;
     const profiles = JSON.parse(localStorage.getItem(PROFILE_LOCAL)) || [];
@@ -140,7 +143,6 @@ renderProfiles();
 function updateProfile(id) {
     idUpdate = id;
     let error = document.querySelectorAll('.error-name');
-    console.log(error);
     for (let i in error) {
         error[i].innerHTML = "";
     }

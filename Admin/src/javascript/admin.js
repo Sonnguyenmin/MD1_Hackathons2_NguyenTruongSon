@@ -13,6 +13,10 @@ let SKILL_LOCAL = 'skills';
 
 btnAdd.addEventListener('click', () => {
     modal.classList.remove('hidden');
+    let error = document.querySelectorAll('.error-name');
+    for (let i in error) {
+        error[i].innerHTML = "";
+    }
 });
 
 
